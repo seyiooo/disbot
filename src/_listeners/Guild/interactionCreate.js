@@ -12,7 +12,7 @@ class InteractionCreateEvent extends Event {
 
             if (!command) {
                 interaction.reply('Sorry, an error occured.');
-                console.log('[Disbot]'.bgWhite.black + ` Command ${interaction.commandName} doesn\'t exist.`);
+                console.log('[Disbot]'.blue + ` Command ${interaction.commandName} doesn\'t exist.`);
             };
 
             command.run(interaction);
