@@ -26,7 +26,7 @@ class ExtendedClient extends Client {
             };
         };
 
-		console.log('[Atom]'.bgWhite.black + ` ${this._eventsCount} events has been loaded.`);
+		console.log('[Disbot]'.blue + ` ${this._eventsCount} events has been loaded.`);
     };
 
     loadCommands() {
