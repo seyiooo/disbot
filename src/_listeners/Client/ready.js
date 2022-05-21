@@ -33,14 +33,14 @@ class ReadyEvent extends Event {
 
                 console.log('[Disbot]'.blue + ` ${this.client.commands.size} commands has been loaded.\n`);
 
-                console.log('[Disbot]'.blue + ' Loaded in ' + `v${this.client.config.utils.version}`.blue + '. Informations:' + '\n➜ ID: ' + `${this.client.user.id}`.bgWhite.black + '\n➜ Servers: ' + `${this.client.guilds.cache.size.toLocaleString()}`.blue + '\n➜ Users: ' + `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}`.blue + '\n➜ Commands: ' + `${this.client.commands.size}`.blue + '\n➜ Events: ' + `${this.client._eventsCount}`.blue + '\n');
+                console.log('  ____  _     _           _   \r\n|  _ \\(_)___| |__   ___ | |_ \r\n| | | | \/ __| \'_ \\ \/ _ \\| __|\r\n| |_| | \\__ \\ |_) | (_) | |_ \r\n|____\/|_|___\/_.__\/ \\___\/ \\__|\r\n                              \r\n'.blue + 'Version: ' + `${this.client.version}`.blue + '\n➜ ID: ' + `${this.client.config.version}`.blue + `${this.client.user.id}`.blue + '\n➜ Servers: ' + `${this.client.guilds.cache.size.toLocaleString()}`.blue + '\n➜ Users: ' + `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}`.blue + '\n➜ Commands: ' + `${this.client.commands.size}`.blue + '\n➜ Events: ' + `${this.client._eventsCount}`.blue + '\n');
             break;
             case undefined:
                 this.client.guilds.cache.get(this.client.config.utils.guild).commands.set(this.client.commands.map((cmd) => cmd.config));
 
                 console.log('[Disbot]'.blue + ` ${this.client.commands.size} commands has been loaded.\n`);
 
-                console.log('[Disbot]'.blue + ' Loaded in ' + `v${this.client.config.utils.version}`.blue + '. Informations:' + '\n➜ ID: ' + `${this.client.user.id}`.bgWhite.black + '\n➜ Servers: ' + `${this.client.guilds.cache.size.toLocaleString()}`.blue + '\n➜ Users: ' + `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}`.blue + '\n➜ Commands: ' + `${this.client.commands.size}`.blue + '\n➜ Events: ' + `${this.client._eventsCount}`.blue + '\n');
+                console.log('  ____  _     _           _   \r\n|  _ \\(_)___| |__   ___ | |_ \r\n| | | | \/ __| \'_ \\ \/ _ \\| __|\r\n| |_| | \\__ \\ |_) | (_) | |_ \r\n|____\/|_|___\/_.__\/ \\___\/ \\__|\r\n                              \r\n'.blue + 'Version: ' + `${this.client.version}`.blue + '\n➜ ID: ' + `${this.client.config.version}`.blue + `${this.client.user.id}`.blue + '\n➜ Servers: ' + `${this.client.guilds.cache.size.toLocaleString()}`.blue + '\n➜ Users: ' + `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}`.blue + '\n➜ Commands: ' + `${this.client.commands.size}`.blue + '\n➜ Events: ' + `${this.client._eventsCount}`.blue + '\n');
             break;
         };
     };
