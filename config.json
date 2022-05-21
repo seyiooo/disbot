@@ -1,0 +1,6 @@
+{
+  "token": "token",
+  "version": "1.0.0",
+  "guild": "guild id (for dev mode)",
+  "devs": ["your id"]
+}
