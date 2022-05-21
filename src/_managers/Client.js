@@ -41,7 +41,7 @@ class ExtendedClient extends Client {
         };
     };
 
-    loadAtomEval() {
+    loadDisbotEval() {
         function exitListener(){
             process.stdin.removeAllListeners('data');
             process.stdin.pause();
