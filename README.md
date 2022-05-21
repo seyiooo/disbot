@@ -27,10 +27,10 @@ npm install
 Open the `config.json` file and modify the token / IDs.
 ```json
 {
-    "token": "token",
-    "version": "1.0.0",
-    "guild": "guild id (for dev mode)",
-    "devs": ["your id"]
+  "token": "token",
+  "version": "1.0.0",
+  "guild": "guild id (for dev mode)",
+  "devs": ["your id"]
 }
 ```
 
