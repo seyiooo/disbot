@@ -5,9 +5,7 @@ A simple template for slash commands. Build in Discord.JS@13.7.0 !
 - [Requirements](#requirements)
 - [Installation](#intallation)
 - [Setup](#setup)
-- [](#)
-- [](#)
-- [](#)
+- [Credits](#credits)
 
 # Requirements
 - [Node](https://nodejs.org/en/) - 16.15.0
@@ -35,3 +33,7 @@ Open the `config.json` file and modify the token / IDs.
     "devs": ["your id"]
 }
 ```
+
+# Credits
+- [sey.](https://github.com/seyiooo)
+- [Sedorikku](https://github.com/Sedorikku1949) for the file structure
