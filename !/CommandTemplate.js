@@ -5,7 +5,6 @@ class CommandTemplate extends Command {
         super(client, {
             name: 'name',
             description: 'description',
-            aliases: ['alias'],
             category: 'category',
             perms: 'PERMISSION',
             meperms: ['PERMISSIONS'],
