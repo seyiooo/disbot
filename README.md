@@ -3,7 +3,7 @@ A simple template for slash commands. Build in Discord.JS@13.7.0 !
 
 # Summary
 - [Requirements](#requirements)
-- [Installation](#intallation)
+- [Installation](#installation)
 - [Setup](#setup)
 - [Credits](#credits)
 
@@ -12,7 +12,7 @@ A simple template for slash commands. Build in Discord.JS@13.7.0 !
 - [NPM](https://www.npmjs.com/) - 8.5.5
 
 # Installation
-```bash
+```
 # Clone the repository
 git clone https://github.com/seyiooo/disbot.git
 
@@ -35,7 +35,7 @@ Open the `config.json` file and modify the token / IDs.
 }
 ```
 There are different ways to run.
-```bash
+```
 # Run as default mode
 node .
 
