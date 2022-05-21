@@ -1,4 +1,4 @@
-const Bot = require('./src/_managers/Atom');
+const Bot = require('./src/_managers/Client');
 
 const client = new Bot({
     allowedMentions: { repliedUser: false },
