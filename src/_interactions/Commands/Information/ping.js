@@ -16,7 +16,6 @@ class PingCommand extends Command {
                 new MessageEmbed()
                 .setTitle('Ping')
                 .setDescription(`Ping: ${this.client.ws.ping}ms`)
-                .setColor(interaction.guild)
             ]
         });
     };
