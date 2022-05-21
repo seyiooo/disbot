@@ -1,0 +1,22 @@
+{
+  "name": "atom",
+  "version": "1.0.0",
+  "description": "Fast and Strong Multi-tool Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "origin-dev": "node starter dev",
+    "origin-start": "node starter",
+    "dev": "HandlerStarter.exe starter.js dev",
+    "start": "HandlerStarter.exe starter.js"
+  },
+  "keywords": [],
+  "author": "sey.#4485",
+  "dependencies": {
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
+    "discord-api-types": "^0.33.0",
+    "discord.js": "^13.6.0",
+    "figlet": "^1.5.2"
+  }
+}
