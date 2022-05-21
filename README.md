@@ -17,7 +17,7 @@ A simple template for slash commands bot. Build in Discord.JS@13.7.0 !
 git clone https://github.com/seyiooo/disbot.git
 
 # Enter into the directory
-cd disbot/
+cd disbot
 
 # Install the dependencies
 npm install
