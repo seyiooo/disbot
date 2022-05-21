@@ -30,7 +30,8 @@ Open the `config.json` file and modify the token / IDs.
   "token": "token",
   "version": "1.0.0",
   "guild": "guild id (for dev mode)",
-  "devs": ["your id"]
+  "devs": ["your id"],
+  "color": "#2F3136"
 }
 ```
 
