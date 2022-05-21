@@ -48,6 +48,4 @@ Discord.User.prototype.getData = function getData() {
 
 ////////// | MESSAGE-EMBED | //////////
 
-Discord.MessageEmbed.prototype.style = 'DEFAULT';
-
 Discord.MessageEmbed.prototype.color = config.utils.color;
