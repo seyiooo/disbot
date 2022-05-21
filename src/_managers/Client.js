@@ -35,7 +35,7 @@ class ExtendedClient extends Client {
             const cmdFile = readdirSync(`./src/_interactions/Commands/${dir}`).filter(f => f.endsWith('.js'));
             for (const cmd of cmdFile) {
                 const command = new (require(`../_interactions/Commands/${dir}/${cmd}`))(this);
-                if (!command.run || !command.config || !command.config.name || !command.config.description) throw new Error('[Disbot]'.blue + ` The file "${cmd}" doesn't have required data.`);
+                if (!command.run || !command.config || !command.config.name || !command.config.description || !command.config.meperms) throw new Error('[Disbot]'.blue + ` The file "${cmd}" doesn't have required data.`);
                 this.commands.set(command.config.name, command);
             };
         };
