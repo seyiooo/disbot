@@ -24,7 +24,7 @@ class ReadyEvent extends Event {
             case 'eval':
                 console.log('[Disbot]'.blue + ' Starting as eval mode.\n');
 
-                this.client.loadAtomEval();
+                this.client.loadDisbotEval();
             break;
             case 'load':
                 console.log('[Disbot]'.blue + ' Starting as load mode.\n');
