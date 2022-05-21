@@ -5,7 +5,7 @@ const colors = require('colors');
 class ExtendedClient extends Client {
     constructor(options) {
         super(options);
-        console.log('  ____  _     _           _   \r\n|  _ \\(_)___| |__   ___ | |_ \r\n| | | | \/ __| \'_ \\ \/ _ \\| __|\r\n| |_| | \\__ \\ |_) | (_) | |_ \r\n|____\/|_|___\/_.__\/ \\___\/ \\__|\r\n                              \r\n');
+        console.log('[Disbot]'.blue + ' Initialisation...');
 
         require('./Prototype');
 
@@ -21,7 +21,7 @@ class ExtendedClient extends Client {
             const evtFile = readdirSync(`./src/_listeners/${dir}`).filter(f => f.endsWith('.js'));
             for (const evt of evtFile) {
                 const event = new (require(`../_listeners/${dir}/${evt}`))(this);
-				if (!event.run || !event.config || !event.config.name) throw new Error('[Disbot]'.bgWhite.black + ` The file "${evt}" doesn't have required data.`.reset);
+				if (!event.run || !event.config || !event.config.name) throw new Error('[Disbot]'.blue + ` The file "${evt}" doesn't have required data.`);
                 this.on(event.config.name, (...args) => event.run(...args));
             };
         };
@@ -35,7 +35,7 @@ class ExtendedClient extends Client {
             const cmdFile = readdirSync(`./src/_interactions/Commands/${dir}`).filter(f => f.endsWith('.js'));
             for (const cmd of cmdFile) {
                 const command = new (require(`../_interactions/Commands/${dir}/${cmd}`))(this);
-                if (!command.run || !command.config || !command.config.name || !command.config.description) throw new Error('[Disbot]'.bgWhite.black + ` The file "${cmd}" doesn't have required data.`.reset);
+                if (!command.run || !command.config || !command.config.name || !command.config.description) throw new Error('[Disbot]'.blue + ` The file "${cmd}" doesn't have required data.`);
                 this.commands.set(command.config.name, command);
             };
         };
@@ -45,7 +45,7 @@ class ExtendedClient extends Client {
         function exitListener(){
             process.stdin.removeAllListeners('data');
             process.stdin.pause();
-            console.log('[Eval]'.bgWhite.black + ' exit successfully.\n'.reset);
+            console.log('[Eval]'.blue + ' exit successfully.\n');
         };
         process.stdin.resume()
         process.stdout.write('➜ ')
@@ -54,13 +54,13 @@ class ExtendedClient extends Client {
             data = data.toString().trim();
             if (data === '.clear') { console.clear(); }
             else if (data === '.exit') return exitListener()
-            else if (data === '.help') console.log('  [DisbotEval Help]  '.bgWhite.black + '\n\n.clear ➜ Clear the console\n.help ➜ see the help\n.exit ➜ exit the eval\n');
+            else if (data === '.help') console.log('  [DisbotEval Help]  '.blue + '\n\n.clear ➜ Clear the console\n.help ➜ see the help\n.exit ➜ exit the eval\n');
             else {
                 try {
                     let evaled = eval(data);
-                    console.log('[Eval]'.bgWhite.black + ` ${require('util').inspect(evaled, { colors: true, depth: 0 })}\n`.reset);
+                    console.log('[Eval]'.blue + ` ${require('util').inspect(evaled, { colors: true, depth: 0 })}\n`);
                 } catch(err) {
-                    console.error('[Eval]'.bgWhite.black + ' ERROR:'.red + ` ${err}\n`.reset);
+                    console.error('[Eval]'.blue + ' ERROR:'.red + ` ${err}\n`);
                 };
             };
             process.stdout.write('➜ ');
