@@ -20,7 +20,7 @@ class CommandTemplate extends Command {
         });
     };
     async run (interaction) {
-        interaction.reply(this.client.utils.Example())
+        console.log('There is a command template');
     };
 };
 
