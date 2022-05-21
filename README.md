@@ -34,6 +34,17 @@ Open the `config.json` file and modify the token / IDs.
   "color": "#2F3136"
 }
 ```
+There are different ways to run.
+```bash
+# Run as default mode
+node .
+
+# Run as eval mode
+node . eval
+
+# Run as load mode
+node . load
+```
 
 # Credits
 - [sey.](https://github.com/seyiooo)
