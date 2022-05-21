@@ -2,7 +2,6 @@ class Command {
     constructor(client, {
         name = null,
         description = null,
-        aliases = null,
         category = null,
         perms = null,
         meperms = null,
@@ -12,7 +11,6 @@ class Command {
         this.config = {
             name,
             description,
-            aliases,
             category,
             perms,
             meperms,
