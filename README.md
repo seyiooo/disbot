@@ -1,4 +1,3 @@
-![disbot](./!/disbot.png)
 <div align="center"><h1>Disbot</h1></div>
 A simple template for slash commands bot. Build in Discord.JS@13.7.0 !
 
