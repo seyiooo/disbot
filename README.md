@@ -1,4 +1,4 @@
-<div align="center"><h1>Discord-Sey</h1></div>
+<div align="center"><h1>Disbot</h1></div>
 A simple template for slash commands. Build in Discord.JS@13.7.0 !
 
 # Summary
