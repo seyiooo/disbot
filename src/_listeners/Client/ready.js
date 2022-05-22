@@ -8,6 +8,8 @@ class ReadyEvent extends Event {
         });
     };
     run () {
+        console.log('  ____  _     _           _   \r\n|  _ \\(_)___| |__   ___ | |_ \r\n| | | | \/ __| \'_ \\ \/ _ \\| __|\r\n| |_| | \\__ \\ |_) | (_) | |_ \r\n|____\/|_|___\/_.__\/ \\___\/ \\__|\r\n                              \r\n'.blue + 'Version: ' + `${this.client.version}`.blue + '\n➜ ID: ' + `${this.client.config.version}`.blue + `${this.client.user.id}`.blue + '\n➜ Servers: ' + `${this.client.guilds.cache.size.toLocaleString()}`.blue + '\n➜ Users: ' + `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}`.blue + '\n➜ Commands: ' + `${this.client.commands.size}`.blue + '\n➜ ContextMenus: ' + `${this.client.contextmenus.size}`.blue + '\n➜ Events: ' + `${this.client._eventsCount}`.blue + '\n');
+        
         const statuses = [
             `${this.client.guilds.cache.size.toLocaleString()} servers`,
             `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()} users`,
@@ -29,14 +31,10 @@ class ReadyEvent extends Event {
             case 'load':
                 console.log('[Disbot]'.blue + ' Starting as load mode.\n');
 
-                this.client.guilds.cache.forEach((guild) => guild.commands.set([].concat(this.client.commands.map((command) => command.config)).concat(this.client.contextmenus.map((contextmenu) => contextmenu.config))));
-
-                console.log('  ____  _     _           _   \r\n|  _ \\(_)___| |__   ___ | |_ \r\n| | | | \/ __| \'_ \\ \/ _ \\| __|\r\n| |_| | \\__ \\ |_) | (_) | |_ \r\n|____\/|_|___\/_.__\/ \\___\/ \\__|\r\n                              \r\n'.blue + 'Version: ' + `${this.client.version}`.blue + '\n➜ ID: ' + `${this.client.config.version}`.blue + `${this.client.user.id}`.blue + '\n➜ Servers: ' + `${this.client.guilds.cache.size.toLocaleString()}`.blue + '\n➜ Users: ' + `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}`.blue + '\n➜ Commands: ' + `${this.client.commands.size}`.blue + '\n➜ Events: ' + `${this.client._eventsCount}`.blue + '\n');
+                this.client.guilds.cache.forEach((guild) => guild.commands.set([].concat(this.client.commands.map((command) => command.config)).concat(this.client.contextmenus.map((contextmenu) => contextmenu.config))));                         \r\n'.blue + 'Version: ' + `${this.client.version}`.blue + '\n➜ ID: ' + `${this.client.config.version}`.blue + `${this.client.user.id}`.blue + '\n➜ Servers: ' + `${this.client.guilds.cache.size.toLocaleString()}`.blue + '\n➜ Users: ' + `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}`.blue + '\n➜ Commands: ' + `${this.client.commands.size}`.blue + '\n➜ Events: ' + `${this.client._eventsCount}`.blue + '\n');
             break;
             case undefined:
                 this.client.guilds.cache.get(this.client.config.utils.guild).commands.set([].concat(this.client.commands.map((command) => command.config)).concat(this.client.contextmenus.map((contextmenu) => contextmenu.config)));
-
-                console.log('  ____  _     _           _   \r\n|  _ \\(_)___| |__   ___ | |_ \r\n| | | | \/ __| \'_ \\ \/ _ \\| __|\r\n| |_| | \\__ \\ |_) | (_) | |_ \r\n|____\/|_|___\/_.__\/ \\___\/ \\__|\r\n                              \r\n'.blue + 'Version: ' + `${this.client.version}`.blue + '\n➜ ID: ' + `${this.client.config.version}`.blue + `${this.client.user.id}`.blue + '\n➜ Servers: ' + `${this.client.guilds.cache.size.toLocaleString()}`.blue + '\n➜ Users: ' + `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}`.blue + '\n➜ Commands: ' + `${this.client.commands.size}`.blue + '\n➜ Events: ' + `${this.client._eventsCount}`.blue + '\n');
             break;
         };
     };
