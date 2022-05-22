@@ -46,13 +46,13 @@ class ExtendedClient extends Client {
     };
 
     loadContextMenus() {
-        const contextmenusFiles = readdirSync('./src/_interactions/ContextMenu');
+        const contextmenusFiles = readdirSync('./src/_interactions/ContextMenus');
 
         for (const dir of contextmenusFiles) {
-            const ctxmenuFile = readdirSync(`./src/_interactions/ContextMenu/${dir}`).filter((f) => f.endsWith('.js'));
+            const ctxmenuFile = readdirSync(`./src/_interactions/ContextMenus/${dir}`).filter((f) => f.endsWith('.js'));
 
             for (const ctxmenu of ctxmenuFile) {
-                const contextmenu = new (require(`../_interactions/ContextMenu/${dir}/${ctxmenu}`))(this);
+                const contextmenu = new (require(`../_interactions/ContextMenus/${dir}/${ctxmenu}`))(this);
 
                 if (!contextmenu.run || !contextmenu.config || !contextmenu.config.name || !contextmenu.config.type || !contextmenu.config.meperms) throw new Error('[Atom]'.red + ` The file "${ctxmenu} doesn't have required data.`);
 
