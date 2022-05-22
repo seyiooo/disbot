@@ -1,4 +1,4 @@
-const ContextMenu = require('../../../_managers/structures/Command');
+const ContextMenu = require('../../../_managers/structures/ContextMenu');
 
 class ContextMenuTemplate extends ContextMenu {
     constructor(client) {
