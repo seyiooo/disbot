@@ -45,7 +45,3 @@ Discord.Role.prototype.isStaff = function isStaff() {
 Discord.User.prototype.getData = function getData() {
     return db.get(this.id);
 };
-
-////////// | MESSAGE-EMBED | //////////
-
-Discord.MessageEmbed.prototype.color = config.utils.color;
