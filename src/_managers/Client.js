@@ -9,8 +9,10 @@ class ExtendedClient extends Client {
 
         require('./Prototype');
 
-        this.utils = require('./Utils');
         this.commands = new Collection();
+	this.contextmenus = new Collection();
+	
+        this.utils = require('./Utils');
         this.database = require('quick.db');
         this.config = require('../../config.json');
     };
@@ -26,7 +28,7 @@ class ExtendedClient extends Client {
             };
         };
 
-		console.log('[Disbot]'.blue + ` ${this._eventsCount} events has been loaded.`);
+	console.log('[Disbot]'.blue + ` ${this._eventsCount} events has been loaded.`);
     };
 
     loadCommands() {
@@ -39,6 +41,26 @@ class ExtendedClient extends Client {
                 this.commands.set(command.config.name, command);
             };
         };
+
+	console.log('[Disbot]'.blue + ` ${this.commands.size} commands has been loaded.`);
+    };
+
+    loadContextMenus() {
+        const contextmenusFiles = readdirSync('./src/_interactions/ContextMenu');
+
+        for (const dir of contextmenusFiles) {
+            const ctxmenuFile = readdirSync(`./src/_interactions/ContextMenu/${dir}`).filter((f) => f.endsWith('.js'));
+
+            for (const ctxmenu of ctxmenuFile) {
+                const contextmenu = new (require(`../_interactions/ContextMenu/${dir}/${ctxmenu}`))(this);
+
+                if (!contextmenu.run || !contextmenu.config || !contextmenu.config.name || !contextmenu.config.type || !contextmenu.config.meperms) throw new Error('[Atom]'.red + ` The file "${ctxmenu} doesn't have required data.`);
+
+                this.contextmenus.set(contextmenu.config.name, contextmenu);
+            };
+        };
+
+        console.log('[Disbot]'.blue + ` ${this.contextmenus.size} context-menus has been loaded.\n`);
     };
 
     loadDisbotEval() {
@@ -75,6 +97,7 @@ class ExtendedClient extends Client {
     async init() {
         this.loadEvents();
         this.loadCommands();
+	this.loadContextMenus();
         this.logger();
     };
 };
