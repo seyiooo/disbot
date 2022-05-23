@@ -39,6 +39,36 @@ class InteractionCreateEvent extends Event {
 
             command.run(interaction);
         };
+        
+        if (interaction.isContextMenu()) {
+            const contextmenu = this.client.contextmenus.get(interaction.commandName);
+
+            if (!contextmenu) return interaction.reply({
+                embeds: [
+                    new MessageEmbed()
+                    .setTitle('Error')
+                    .setDescription('Sorry, an error occured.')
+                ]
+            });
+
+            if (!interaction.member.permissions.has(contextmenu.config.perms)) return interaction.reply({
+                embeds: [
+                    new MessageEmbed()
+                    .setTitle('Error')
+                    .setDescription(`Sorry, you don\'t have permission to run this command.\n${contextmenu.config.perms.map((perm) => `\`${perm}\``).join(', ')}`)
+                ]
+            });
+
+            if (!interaction.guild.me.permissions.has(contextmenu.config.meperms)) return interaction.reply({
+                embeds: [
+                    new MessageEmbed()
+                    .setTitle('Error')
+                    .setDescription(`Sorry, I don\'t have permission to run this command.\n${contextmenu.config.meperms.map((perm) => `\`${perm}\``).join(', ')}`)
+                ]
+            });
+
+            contextmenu.run(interaction);
+        };
     };
 };
 
