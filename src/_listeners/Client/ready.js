@@ -34,7 +34,7 @@ class ReadyEvent extends Event {
                 this.client.guilds.cache.forEach((guild) => guild.commands.set([].concat(this.client.commands.map((command) => command.config)).concat(this.client.contextmenus.map((contextmenu) => contextmenu.config))));                         \r\n'.blue + 'Version: ' + `${this.client.version}`.blue + '\n➜ ID: ' + `${this.client.config.version}`.blue + `${this.client.user.id}`.blue + '\n➜ Servers: ' + `${this.client.guilds.cache.size.toLocaleString()}`.blue + '\n➜ Users: ' + `${this.client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}`.blue + '\n➜ Commands: ' + `${this.client.commands.size}`.blue + '\n➜ Events: ' + `${this.client._eventsCount}`.blue + '\n');
             break;
             case undefined:
-                this.client.guilds.cache.get(this.client.config.utils.guild).commands.set([].concat(this.client.commands.map((command) => command.config)).concat(this.client.contextmenus.map((contextmenu) => contextmenu.config)));
+                this.client.guilds.cache.get(this.client.config.guild).commands.set([].concat(this.client.commands.map((command) => command.config)).concat(this.client.contextmenus.map((contextmenu) => contextmenu.config)));
             break;
         };
     };
