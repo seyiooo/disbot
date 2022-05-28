@@ -25,7 +25,7 @@ class ButtonCreateEvent extends Event {
         try {
             selectmenu.run(interaction);
             
-            console.log('[Disbot]'.blue + ` A select-menu has been executed:` + '\n➜ SelectMenu: ' + `${interaction.customId}`.blue + '\n➜ Guild: ' + `${interaction.guild.name}`.blue + '\n➜ Channel: ' + `${interaction.channel.name}`.blue + '\n➜ User: ' + `${interaction.user.tag}`.blue + '\n');
+            console.log('[Disbot]'.blue + ` A button has been executed:` + '\n➜ Button: ' + `${interaction.customId}`.blue + '\n➜ Guild: ' + `${interaction.guild.name}`.blue + '\n➜ Channel: ' + `${interaction.channel.name}`.blue + '\n➜ User: ' + `${interaction.user.tag}`.blue + '\n');
         } catch(err) {
             interaction.reply({
                 embeds: [
