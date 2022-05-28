@@ -9,12 +9,6 @@ class ContentContextMenu extends ContextMenu {
             meperms: ['SEND_MESSAGES']
         });
     };
-
-    /**
-     * Run the ContextMenu
-     * @param {ContextMenuInteraction} interaction The interaction
-     */
-
     async run (interaction) {
         const message = await this.client.utils.fetchMessage(interaction.channelId, interaction.targetId)
         .catch();
