@@ -1,0 +1,8 @@
+{
+  "token": "token",
+  "version": "1.0.0",
+  "guild": "guild id (if you run without process arguments)",
+  "devs": ["your id"],
+  "logs": "logs channel id",
+  "color": "#color"
+}
