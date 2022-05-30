@@ -10,8 +10,9 @@ class InteractionCreateEvent extends Event {
     run (interaction) {
         if (!interaction.guild || interaction.user.bot) return;
 
-        if (interaction.isCommand() || interaction.isContextMenu() || interaction.isModalSubmit() || interaction.isSelectMenu()) {
-            const int = this.client.commands.get(interaction.commandName)
+        if (interaction.isButton() || interaction.isCommand() || interaction.isContextMenu() || interaction.isModalSubmit() || interaction.isSelectMenu()) {
+            const int = this.client.buttons.get(interaction.customId)
+            || this.client.commands.get(interaction.commandName)
             || this.client.contextmenus.get(interaction.commandName)
             || this.client.modals.get(interaction.customId)
             || this.client.selectmenus.get(interaction.customId);
