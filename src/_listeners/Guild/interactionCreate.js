@@ -17,7 +17,7 @@ class InteractionCreateEvent extends Event {
             || this.client.modals.get(interaction.customId)
             || this.client.selectmenus.get(interaction.customId);
 
-            if (int.config.perms && (int.config.perms.includes('DEVELOPER') && !this.client.config.utils.devs.includes(interaction.user.id) || !interaction.member.permissions.has(int.config.perms.filter((perm) => perm !== 'DEVELOPER')))) return interaction.reply({
+            if (int.config.perms && (int.config.perms.includes('DEVELOPER') && !this.client.config.devs.includes(interaction.user.id) || !interaction.member.permissions.has(int.config.perms.filter((perm) => perm !== 'DEVELOPER')))) return interaction.reply({
                 embeds: [
                     new MessageEmbed()
                     .setTitle('Error')
