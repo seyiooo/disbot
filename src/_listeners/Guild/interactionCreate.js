@@ -6,7 +6,7 @@ class InteractionCreateEvent extends Event {
         super(client, {
             name: 'interactionCreate'
         });
-    };
+    }
     run (interaction) {
         if (!interaction.guild || interaction.user.bot) return;
 
@@ -36,7 +36,7 @@ class InteractionCreateEvent extends Event {
                 ],
                 ephemeral: true
             });
-        };
+        }
 
         if (interaction.isButton()) this.client.emit('buttonCreate', interaction);
 
@@ -47,7 +47,7 @@ class InteractionCreateEvent extends Event {
         if (interaction.isModalSubmit()) this.client.emit('modalCreate', interaction);
 
         if (interaction.isSelectMenu()) this.client.emit('selectMenuCreate', interaction);
-    };
-};
+    }
+}
 
 module.exports = InteractionCreateEvent;
